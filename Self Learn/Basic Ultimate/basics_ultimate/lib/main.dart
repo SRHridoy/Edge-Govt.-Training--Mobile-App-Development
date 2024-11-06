@@ -2,14 +2,23 @@
 
 import 'package:basics_ultimate/pages/appbar_widgets.dart';
 import 'package:basics_ultimate/pages/button_widgets.dart';
+import 'package:basics_ultimate/pages/circular_avatar_widgets.dart';
 import 'package:basics_ultimate/pages/column_and_expanded.dart';
+import 'package:basics_ultimate/pages/gesture_detector_widgets.dart';
+import 'package:basics_ultimate/pages/grid_view_widgets.dart';
 import 'package:basics_ultimate/pages/icon_widgets.dart';
+import 'package:basics_ultimate/pages/image_button_widgets.dart';
 import 'package:basics_ultimate/pages/image_widgets.dart';
+import 'package:basics_ultimate/pages/listview_builder_widgets.dart';
+import 'package:basics_ultimate/pages/listview_separated_widgets.dart';
 import 'package:basics_ultimate/pages/listview_widgets.dart';
+import 'package:basics_ultimate/pages/listview_with_listtile.dart';
+import 'package:basics_ultimate/pages/navigation_routes.dart';
 import 'package:basics_ultimate/pages/scaffold_and_container.dart';
+import 'package:basics_ultimate/pages/stack_widgets.dart';
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
@@ -25,8 +34,18 @@ class MyApp extends StatelessWidget {
       //home: AppbarWidgets(),
       //home: ColumnAndExpandedWidgets(),
       //home: ListviewWidgets(),
+      //home: ListviewBuilderWidgets(),
+      //home: ListviewSeparatedWidgets(),
+      //home: CircularAvatarWidgets(),
+      home: ListviewWithListTile(),
+      //home: GridViewWidgets(),
+      //home: StackWidgets(),
       //home:ButtonWidgets(),
-      home:ImageWidgets(),
+      //home:ImageButton(),
+      //home:ImageWidgets(),
+      //home: GestureDetectorWidgets(),
+      //home: NavigationRoutes(),
+
     );
   }
 }

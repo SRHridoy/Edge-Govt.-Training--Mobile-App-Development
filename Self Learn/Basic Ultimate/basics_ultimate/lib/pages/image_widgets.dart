@@ -16,8 +16,15 @@ class ImageWidgets extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
       ),
-      body: Image.asset('assets/images/child_bou_2.jpg'),
-      
+      body: Center(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(24),
+              child: Image.asset(
+        'assets/images/child_boy.jpg',
+        width: 250,
+        height: 250,
+        fit: BoxFit.cover,
+      ))),
     );
   }
 }
