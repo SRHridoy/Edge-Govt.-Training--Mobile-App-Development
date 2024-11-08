@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:basics_ultimate/pages/appbar_widgets.dart';
+import 'package:basics_ultimate/pages/bottom_navigation_bar.dart';
 import 'package:basics_ultimate/pages/button_widgets.dart';
 import 'package:basics_ultimate/pages/circular_avatar_widgets.dart';
 import 'package:basics_ultimate/pages/column_and_expanded.dart';
@@ -13,6 +14,7 @@ import 'package:basics_ultimate/pages/listview_builder_widgets.dart';
 import 'package:basics_ultimate/pages/listview_separated_widgets.dart';
 import 'package:basics_ultimate/pages/listview_widgets.dart';
 import 'package:basics_ultimate/pages/listview_with_listtile.dart';
+import 'package:basics_ultimate/pages/navigation_drawer_widgets.dart';
 import 'package:basics_ultimate/pages/navigation_routes.dart';
 import 'package:basics_ultimate/pages/scaffold_and_container.dart';
 import 'package:basics_ultimate/pages/stack_widgets.dart';
@@ -45,7 +47,15 @@ class MyApp extends StatelessWidget {
       //home:ImageWidgets(),
       //home: GestureDetectorWidgets(),
       //home: NavigationRoutes(),
+      //home: NavigationDrawerWidgets(),
+      //home: BottomNavigationBarWidgets(),
 
+
+      routes:{
+        '/navigation_routes':(context)=>NavigationRoutes(),
+        '/image_button_widgets':(context)=>ImageButton(),
+        '/listview_with_listtile':(context)=>ListviewWithListTile(),
+      },
     );
   }
 }

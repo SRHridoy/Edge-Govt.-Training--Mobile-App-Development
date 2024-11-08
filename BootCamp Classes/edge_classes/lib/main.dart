@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:class_04/pages/background_images.dart';
-import 'package:class_04/pages/flex_widgets.dart';
-import 'package:class_04/pages/image_widgets.dart';
+import 'package:edge_classes/pages/background_images.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -16,9 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      //home: ImageWidgets(),
-      //home: BackgroundImages(),
-      home: FlexWidgets(),
+      home: BackgroundImages(),
     );
   }
 }
