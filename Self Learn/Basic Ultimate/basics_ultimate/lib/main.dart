@@ -5,6 +5,7 @@ import 'package:basics_ultimate/pages/bottom_navigation_bar.dart';
 import 'package:basics_ultimate/pages/button_widgets.dart';
 import 'package:basics_ultimate/pages/circular_avatar_widgets.dart';
 import 'package:basics_ultimate/pages/column_and_expanded.dart';
+import 'package:basics_ultimate/pages/lottie_animation.dart';
 import 'package:basics_ultimate/pages/tasbih_counter.dart';
 import 'package:basics_ultimate/pages/gesture_detector_widgets.dart';
 import 'package:basics_ultimate/pages/grid_view_widgets.dart';
@@ -52,7 +53,8 @@ class MyApp extends StatelessWidget {
       //home: NavigationDrawerWidgets(),
       //home: BottomNavigationBarWidgets(),
       //home : TasbihCounter(), //work later
-      home: TextFieldWidget(),
+      //home: TextFieldWidget(),
+      home:LottieAnimation(),
       routes: {
         '/navigation_routes': (context) => NavigationRoutes(),
         '/image_button_widgets': (context) => ImageButton(),
