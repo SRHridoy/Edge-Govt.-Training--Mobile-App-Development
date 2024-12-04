@@ -98,9 +98,31 @@ void main() {
   numList.removeRange(0, numList.length);
   print(numList);
 
-  //Map
-  
+  //specific type list :
+  List<int> roll = [1, 3, 4, 5, 6];
+  print(roll);
 
+  //Map
+  Map userDetails = {
+    'username': 'Hridoy',
+    'email': 'sohanurrahman@gmail.com',
+    'password': 'password',
+  };
+  userDetails['uid'] = '12k00';
+  print(userDetails);
+  print(userDetails['username'] + " " + userDetails['email']);
+  print(userDetails.keys);
+  print(userDetails.values);
+
+  //list of map:
+  List<Map> students = [
+    {'name': 'abc', 'roll': 12, 'address': 'jungle'},
+    {'name': 'xyz', 'roll': 4, 'address': 'forest'},
+  ];
+
+  print(students);
+  print(students[0]);
+  print(students[0]['name']);
   //Set
 
   //Runes

@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -11,6 +13,27 @@ class BanglaSorborno extends StatefulWidget {
 }
 
 class _BanglaSorbornoState extends State<BanglaSorborno> {
+
+  final AudioPlayer player = AudioPlayer();
+
+  //play the audio :
+  void _playSound(String alphabetName) async{
+    try {
+      await player.play(AssetSource('audios/bangla_sorborno/$alphabetName'));
+    }catch (e) {
+      if(kDebugMode){
+        print('Error Playing : $e');
+      }
+    }
+  }
+  @override
+  void dispose() {
+    super.dispose();
+    // Dispose of the audio player when not in use
+    player.dispose();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,12 +58,13 @@ class _BanglaSorbornoState extends State<BanglaSorborno> {
 
           Column(
             children: [
-              _row(img1: '1.png', img2: '2.png'),
-              _row(img1: '3.png', img2: '4.png'),
-              _row(img1: '5.png', img2: '6.png'),
-              _row(img1: '7.png', img2: '8.png'),
-              _row(img1: '9.png', img2: '10.png'),
-              _row(img1: '11.png', img2: ''),
+              _row(sorborno1: 'অ',sorborno1Audio: '1.opus',sorborno2: 'আ',sorborno2Audio: '2.opus'),
+              _row(sorborno1: 'ই',sorborno1Audio: '3.opus',sorborno2: 'ঈ',sorborno2Audio: '4.opus'),
+              _row(sorborno1: 'উ',sorborno1Audio: '5.opus',sorborno2: 'ঊ',sorborno2Audio: '6.opus'),
+              _row(sorborno1: 'ঋ',sorborno1Audio: '7.opus',sorborno2: 'এ',sorborno2Audio: '8.opus'),
+              _row(sorborno1: 'ঐ',sorborno1Audio: '9.opus',sorborno2: 'ও',sorborno2Audio: '10.opus'),
+              _row(sorborno1: 'ঔ',sorborno1Audio: '11.opus',sorborno2: '',sorborno2Audio: ''),
+
             ],
           ),
 
@@ -50,32 +74,35 @@ class _BanglaSorbornoState extends State<BanglaSorborno> {
     ));
   }
 
-  Widget _row({required String img1, required String img2}) {
+  Widget _row({required String sorborno1, required String sorborno1Audio ,required String sorborno2,required String sorborno2Audio}) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          _container(img1),
-          _container(img2),
+          _container(sorborno1,sorborno1Audio),
+          _container(sorborno2,sorborno2Audio),
         ],
       ),
 
     );
   }
 
-  Widget _container(String img) {
+  Widget _container(String sorborno,String alphabetName) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Expanded(
         child: GestureDetector(
           onTap: () {
+            setState(() {
+              _playSound(alphabetName);
 
+            });
           },
           child: Container(
             width: 140,
             height: 140,
-            decoration: img.isNotEmpty
+            decoration: sorborno.isNotEmpty
                 ? BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               gradient: LinearGradient(
@@ -90,12 +117,9 @@ class _BanglaSorbornoState extends State<BanglaSorborno> {
               border: Border.all(
                 width: 4,
               ),
-              image: DecorationImage(
-                image: AssetImage('assets/images/bangla_sorborno_imgs/$img'),
-                fit: BoxFit.cover, // Makes sure the image covers the entire container
-              ),
             )
                 : null,
+            child: Center(child: Text(sorborno,style: TextStyle(color: Colors.black,fontSize: 40,),)),
           ),
         ),
       ),
